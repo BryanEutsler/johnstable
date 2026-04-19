@@ -15,7 +15,7 @@ export interface ContactMethod {
   note?: string;
 }
 
-export interface SponsorPlaceholder {
+export interface SponsorProfile {
   title: string;
   image: string;
   alt: string;
@@ -81,41 +81,41 @@ export const contactMethods: ContactMethod[] = [
   }
 ];
 
-export const sponsorPlaceholders: SponsorPlaceholder[] = [
+export const sponsorProfiles: SponsorProfile[] = [
   {
-    title: "Community partner placeholder",
+    title: "Neighborhood partners",
     image: "/placeholders/sponsor-community.svg",
-    alt: "Placeholder image for a future community partner logo.",
-    note: "Use this slot for a neighborhood organization, church, or outreach partner."
+    alt: "Illustration representing neighborhood partner organizations working alongside John's Table.",
+    note: "Community groups, churches, and local organizers can help extend the reach of meals, care, and follow-up support."
   },
   {
-    title: "Local sponsor placeholder",
+    title: "Local business sponsors",
     image: "/placeholders/sponsor-market.svg",
-    alt: "Placeholder image for a future local sponsor logo.",
-    note: "Use this slot for a business helping fund meals, clothing, or logistics."
+    alt: "Illustration representing local businesses supporting John's Table.",
+    note: "Businesses can underwrite supplies, sponsor gatherings, or support the practical needs that keep direct service moving."
   },
   {
-    title: "Founding supporter placeholder",
+    title: "Founding supporters",
     image: "/placeholders/sponsor-foundation.svg",
-    alt: "Placeholder image for a future founding supporter logo.",
-    note: "Use this slot for a grantmaker, donor circle, or long-term backer."
+    alt: "Illustration representing long-term financial supporters of John's Table.",
+    note: "Individual donors, foundations, and lead supporters can help create the consistency that makes community care sustainable."
   }
 ];
 
 export const donationOptions: DonationOption[] = [
   {
-    title: "Meals and table service",
-    summary: "Support the direct work of gathering people around food, care, and conversation.",
-    note: "A future donation processor can map gifts here for meal ingredients, serving supplies, and hospitality."
+    title: "Support shared meals",
+    summary: "Help make it possible to welcome people with food, conversation, and a sense of belonging.",
+    note: "This lane speaks to ingredients, serving supplies, and the hospitality that turns a meal into a point of care."
   },
   {
-    title: "Clothing and essentials",
-    summary: "Help stock the practical items that restore comfort, dignity, and immediate relief.",
-    note: "This lane is suited for both cash gifts and in-kind support once fulfillment details are confirmed."
+    title: "Provide essentials",
+    summary: "Strengthen the clothing and basic-item support that meets immediate needs with dignity.",
+    note: "This lane works for financial support today and can later expand to in-kind giving campaigns."
   },
   {
-    title: "Resource connection",
-    summary: "Back the coordination work that helps neighbors move from crisis support toward steadier footing.",
-    note: "Use this area later for sponsor-backed outreach, transit help, and referral support."
+    title: "Back resource connection",
+    summary: "Support the relational work that helps neighbors move from urgent help toward greater stability.",
+    note: "This lane is well suited to sponsor-backed outreach, coordination, and other forms of practical follow-through."
   }
 ];

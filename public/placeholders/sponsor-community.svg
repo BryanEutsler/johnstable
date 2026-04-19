@@ -4,8 +4,8 @@
   <circle cx="250" cy="246" r="126" fill="#B66A38"/>
   <circle cx="950" cy="226" r="78" fill="#D8B183"/>
   <path d="M168 592C235.2 492 312.8 442 401 442C489.2 442 561.2 495.2 617 602C672.8 708.8 756.4 762.2 868 762.2C948 762.2 1014.67 740.467 1068 697V836H132V701C142.667 665.267 154.667 628.933 168 592Z" fill="#24443B"/>
-  <text x="126" y="146" fill="#24443B" font-family="Arial, sans-serif" font-size="28" letter-spacing="5">PLACEHOLDER IMAGE</text>
-  <text x="126" y="352" fill="#1A2B26" font-family="Georgia, serif" font-size="108">Community</text>
-  <text x="126" y="452" fill="#1A2B26" font-family="Georgia, serif" font-size="108">Partner</text>
-  <text x="126" y="520" fill="#5F6C63" font-family="Arial, sans-serif" font-size="34">Swap this panel for a real partner mark or photo.</text>
+  <text x="126" y="146" fill="#24443B" font-family="Arial, sans-serif" font-size="28" letter-spacing="5">JOHN'S TABLE</text>
+  <text x="126" y="352" fill="#1A2B26" font-family="Georgia, serif" font-size="108">Neighborhood</text>
+  <text x="126" y="452" fill="#1A2B26" font-family="Georgia, serif" font-size="108">Partners</text>
+  <text x="126" y="520" fill="#5F6C63" font-family="Arial, sans-serif" font-size="34">Churches, community groups, and local organizers working together.</text>
 </svg>

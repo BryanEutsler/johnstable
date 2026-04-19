@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
-import { siteMeta, sponsorPlaceholders } from "../data/site";
+import { siteMeta, sponsorProfiles } from "../data/site";
 ---
 
 <BaseLayout
@@ -10,14 +10,14 @@ import { siteMeta, sponsorPlaceholders } from "../data/site";
 >
   <PageHero
     eyebrow="Community partners and sponsors"
-    title="A sponsor page that can hold real support without looking unfinished."
-    description="These are placeholder visual blocks for future supporters. They give the page structure now and can be swapped out later for real logos, marks, or sponsor photography."
+    title="Support can come from neighbors, businesses, and long-term champions."
+    description="This page shows the kinds of supporters John&apos;s Table can actively invite without inventing specific logos or endorsements."
   />
 
   <section class="page-content">
     <div class="section__inner sponsor-grid sponsor-grid--page">
       {
-        sponsorPlaceholders.map((item) => (
+        sponsorProfiles.map((item) => (
           <article class="sponsor-card" data-reveal>
             <img class="sponsor-image" src={item.image} alt={item.alt} loading="lazy" />
             <div class="sponsor-card__meta">
@@ -35,29 +35,29 @@ import { siteMeta, sponsorPlaceholders } from "../data/site";
       <article class="shell-card" data-reveal>
         <h2>Why this page exists</h2>
         <p>
-          Future collaborators need a clear destination where recognition, partnership notes, and active
-          opportunities to support the work can live in one place.
+          Prospective supporters need a page that explains how they can get involved and what kind of role
+          they can play in helping the organization serve the community.
         </p>
       </article>
       <article class="shell-card" data-reveal>
-        <h2>What belongs here later</h2>
+        <h2>What can be added over time</h2>
         <p>
-          Confirmed sponsor names, logo treatments, event partners, volunteer crews, and short stories
-          about how support expands the reach of meals, clothing, and resource connection.
+          Real sponsor names, event partnerships, short impact stories, and approved logos can be layered
+          into this page later without changing its structure.
         </p>
       </article>
       <article class="shell-card" data-reveal>
         <h2>Partnership lanes</h2>
         <p>
-          This structure is ready for meal sponsorships, in-kind donations, event collaborations, and
-          neighborhood support from businesses, churches, and civic groups.
+          Meal sponsorships, in-kind support, volunteer collaborations, and neighborhood-led outreach all
+          fit naturally within this public-facing framework.
         </p>
       </article>
       <article class="shell-card" data-reveal>
-        <h2>Next connection</h2>
+        <h2>Invitation to respond</h2>
         <p>
-          The contact form now gives sponsors a concrete way to reach out, even before a dedicated donor
-          or CRM workflow is wired up behind the scenes.
+          The contact page gives potential sponsors and partners a clear next step, which is enough for a
+          demo and easy to extend into a fuller workflow later.
         </p>
       </article>
     </div>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { projectHighlights, siteMeta, sponsorPlaceholders } from "../data/site";
+import { projectHighlights, siteMeta, sponsorProfiles } from "../data/site";
 ---
 
 <BaseLayout
@@ -28,8 +28,7 @@ import { projectHighlights, siteMeta, sponsorPlaceholders } from "../data/site";
           <a class="button button--secondary" href="/contact">Contact</a>
         </div>
         <p class="hero-note">
-          This second pass turns the site into a clearer public-facing invitation to partner, give, and
-          reach out.
+          This version gives John&apos;s Table a clearer public-facing story and stronger calls to action.
         </p>
       </div>
 
@@ -75,8 +74,8 @@ import { projectHighlights, siteMeta, sponsorPlaceholders } from "../data/site";
         <p class="section__eyebrow">Mission and vision</p>
         <h2>Care that starts with the immediate need and keeps reaching outward.</h2>
         <p>
-          The live site gives only a small amount of copy. This version gives that message a stronger
-          frame and a clearer emotional center.
+          The organization&apos;s current public message is simple and direct. This homepage gives that
+          message stronger structure, warmer language, and a clearer path for supporters to respond.
         </p>
       </div>
 
@@ -122,16 +121,16 @@ import { projectHighlights, siteMeta, sponsorPlaceholders } from "../data/site";
     <div class="section__inner sponsor-showcase">
       <div class="section__intro" data-reveal>
         <p class="section__eyebrow">Sponsors and partners</p>
-        <h2>Placeholder visuals make room for future supporters without pretending they already exist.</h2>
+        <h2>Partnership can take many forms, from local sponsorship to long-term support.</h2>
         <p>
-          These image slots can be replaced with real sponsor marks or partner photography as soon as
-          John&apos;s Table has approved assets to publish.
+          For the demo, this section shows the kinds of partnerships John&apos;s Table can invite right now:
+          neighborhood collaboration, business support, and committed financial backing.
         </p>
       </div>
 
       <div class="sponsor-grid">
         {
-          sponsorPlaceholders.map((item) => (
+          sponsorProfiles.map((item) => (
             <article class="sponsor-card" data-reveal>
               <img class="sponsor-image" src={item.image} alt={item.alt} loading="lazy" />
               <div class="sponsor-card__meta">
@@ -156,10 +155,10 @@ import { projectHighlights, siteMeta, sponsorPlaceholders } from "../data/site";
     <div class="section__inner">
       <div class="cta-panel cta-panel--ink" data-reveal>
         <p class="section__eyebrow">Give support a visible place</p>
-        <h2>The site now has a donation page ready for future processor links and giving campaigns.</h2>
+        <h2>The donation page now explains how support can strengthen the work, even before online giving is connected.</h2>
         <p>
-          It can explain where gifts go today, then connect to a real payment or donation platform in the
-          next pass without redesigning the structure again.
+          That gives the client a realistic preview of how giving can be framed on the site without
+          committing to a processor or donation workflow yet.
         </p>
         <div class="cta-row">
           <a class="button button--primary" href="/donate">Open donations page</a>

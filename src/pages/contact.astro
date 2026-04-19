@@ -7,8 +7,8 @@ import { contactMethods, siteMeta } from "../data/site";
 <BaseLayout title={`Contact | ${siteMeta.name}`} description="A styled contact page for John's Table.">
   <PageHero
     eyebrow="Contact"
-    title="A real contact surface, ready for wiring."
-    description="The form below is intentionally front-end only for now. It creates the full interaction shape so an email service, form handler, or Worker endpoint can be connected in the next pass."
+    title="A clear place to start the conversation."
+    description="This page shows a full contact experience with a polished form, clear message categories, and simple paths for outreach."
   />
 
   <section class="page-content">
@@ -17,10 +17,10 @@ import { contactMethods, siteMeta } from "../data/site";
         <form class="contact-form" data-reveal>
           <div class="form-intro">
             <p class="section__eyebrow">Send a message</p>
-            <h2>Start with the essentials and keep the tone direct.</h2>
+            <h2>Tell John&apos;s Table how you would like to connect.</h2>
             <p>
-              This form is designed and styled now so the team can approve the public experience before
-              choosing where submissions should go.
+              The form is designed to feel complete in the demo while leaving room for the final delivery
+              method to be connected before launch.
             </p>
           </div>
 
@@ -61,8 +61,7 @@ import { contactMethods, siteMeta } from "../data/site";
           <div class="form-actions">
             <button class="button button--primary" type="button">Send message</button>
             <p class="form-note">
-              Submission handling is not wired yet. This pass establishes the form inputs, hierarchy, and
-              styling only.
+              Demo note: delivery routing can be connected to email or a form handler during launch prep.
             </p>
           </div>
         </form>
