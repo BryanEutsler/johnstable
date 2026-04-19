@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { projectHighlights, siteMeta } from "../data/site";
+import { projectHighlights, siteMeta, sponsorPlaceholders } from "../data/site";
 ---
 
 <BaseLayout
@@ -11,39 +11,60 @@ import { projectHighlights, siteMeta } from "../data/site";
     <div class="home-hero__inner">
       <div class="home-hero__content">
         <p class="eyebrow">{siteMeta.tagline}</p>
-        <h1>Community care that starts with a table and grows outward.</h1>
+        <h1>A neighborhood table for meals, dignity, and next steps.</h1>
         <p class="lede">
-          {siteMeta.name} is laying the groundwork for a more visible and welcoming nonprofit presence,
-          centered on meals, practical support, and neighbor-to-neighbor care.
+          {siteMeta.name} exists to make care feel immediate and human: a meal first, then clothing,
+          practical support, and a clearer path toward what comes next.
         </p>
+        <div class="hero-pills">
+          <span>Meals</span>
+          <span>Clothing</span>
+          <span>Resources</span>
+          <span>Community support</span>
+        </div>
         <div class="hero-actions">
-          <a class="button button--primary" href="/projects">View Projects</a>
+          <a class="button button--primary" href="/donate">Donate</a>
+          <a class="button button--secondary" href="/projects">View Projects</a>
           <a class="button button--secondary" href="/contact">Contact</a>
         </div>
+        <p class="hero-note">
+          This second pass turns the site into a clearer public-facing invitation to partner, give, and
+          reach out.
+        </p>
       </div>
 
       <div class="home-hero__visual" aria-hidden="true">
         <div class="visual-panel">
-          <p class="visual-panel__quote">“Healing our community one meal at a time.”</p>
+          <div class="visual-panel__crest">John's Table</div>
+          <p class="visual-panel__quote">Healing our community one meal at a time.</p>
           <div class="visual-panel__details">
             <div class="visual-chip">
-              <strong>Mission</strong>
-              <span>Food, clothing, and resources for neighbors in need.</span>
+              <strong>Care starts here</strong>
+              <span>Food and essentials offered with dignity, not distance.</span>
             </div>
             <div class="visual-chip">
-              <strong>Approach</strong>
-              <span>Grounded, direct, and centered on dignity.</span>
+              <strong>Built for partnership</strong>
+              <span>Ready for local sponsors, volunteers, and community allies.</span>
             </div>
             <div class="visual-chip">
-              <strong>Focus</strong>
-              <span>Community support with practical follow-through.</span>
-            </div>
-            <div class="visual-chip">
-              <strong>Next step</strong>
-              <span>Build partnerships and widen local visibility.</span>
+              <strong>Made to grow</strong>
+              <span>A stronger public site now, deeper stories and giving tools next.</span>
             </div>
           </div>
         </div>
+        <div class="visual-tag visual-tag--top">501(c)(3)</div>
+        <div class="visual-tag visual-tag--bottom">Community care, visibly organized</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--band">
+    <div class="section__inner">
+      <div class="story-band" data-reveal>
+        <span>Meals that gather people</span>
+        <span>Clothing that restores comfort</span>
+        <span>Resources that help people move forward</span>
+        <span>Sponsors that help the work last</span>
       </div>
     </div>
   </section>
@@ -52,7 +73,11 @@ import { projectHighlights, siteMeta } from "../data/site";
     <div class="section__inner">
       <div class="section__intro" data-reveal>
         <p class="section__eyebrow">Mission and vision</p>
-        <h2>Small acts of care can become a steady community presence.</h2>
+        <h2>Care that starts with the immediate need and keeps reaching outward.</h2>
+        <p>
+          The live site gives only a small amount of copy. This version gives that message a stronger
+          frame and a clearer emotional center.
+        </p>
       </div>
 
       <div class="mission-grid">
@@ -72,10 +97,10 @@ import { projectHighlights, siteMeta } from "../data/site";
     <div class="section__inner">
       <div class="section__intro" data-reveal>
         <p class="section__eyebrow">What the work points toward</p>
-        <h2>Early priorities rooted in real needs, not abstract promises.</h2>
+        <h2>Three practical lanes the organization can speak about with confidence now.</h2>
         <p>
-          The current public content is limited, but the themes are clear: nourish people, provide
-          practical essentials, and help connect them to the next layer of support.
+          Rather than padding the site with vague nonprofit language, the homepage keeps attention on the
+          direct kinds of help already named in the existing public material.
         </p>
       </div>
 
@@ -94,36 +119,51 @@ import { projectHighlights, siteMeta } from "../data/site";
   </section>
 
   <section class="section">
-    <div class="section__inner">
-      <div class="cta-panel" data-reveal>
-        <p class="section__eyebrow">Partners and sponsors</p>
-        <h2>Community support grows faster when more hands are at the table.</h2>
+    <div class="section__inner sponsor-showcase">
+      <div class="section__intro" data-reveal>
+        <p class="section__eyebrow">Sponsors and partners</p>
+        <h2>Placeholder visuals make room for future supporters without pretending they already exist.</h2>
         <p>
-          This first version leaves room for future sponsor names, partner stories, and collaboration
-          details without filling the page with invented proof. The structure is ready for that next step.
+          These image slots can be replaced with real sponsor marks or partner photography as soon as
+          John&apos;s Table has approved assets to publish.
         </p>
-        <div class="cta-row">
-          <a class="button button--primary" href="/community-partners-and-sponsors">
-            Explore partnership page
-          </a>
-          <a class="button button--secondary" href="/about">Read the story</a>
-        </div>
+      </div>
+
+      <div class="sponsor-grid">
+        {
+          sponsorPlaceholders.map((item) => (
+            <article class="sponsor-card" data-reveal>
+              <img class="sponsor-image" src={item.image} alt={item.alt} loading="lazy" />
+              <div class="sponsor-card__meta">
+                <h3>{item.title}</h3>
+                <p>{item.note}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="cta-row" data-reveal>
+        <a class="button button--primary" href="/community-partners-and-sponsors">
+          Explore sponsor page
+        </a>
+        <a class="button button--secondary" href="/contact">Start a partnership conversation</a>
       </div>
     </div>
   </section>
 
-  <section class="section section--surface">
+  <section class="section section--ink">
     <div class="section__inner">
-      <div class="cta-panel" data-reveal>
-        <p class="section__eyebrow">Get in touch</p>
-        <h2>Use this site foundation to start more direct conversations.</h2>
+      <div class="cta-panel cta-panel--ink" data-reveal>
+        <p class="section__eyebrow">Give support a visible place</p>
+        <h2>The site now has a donation page ready for future processor links and giving campaigns.</h2>
         <p>
-          The contact page is intentionally simple for now, with clear placeholders where confirmed
-          outreach details can be added as soon as they are available.
+          It can explain where gifts go today, then connect to a real payment or donation platform in the
+          next pass without redesigning the structure again.
         </p>
         <div class="cta-row">
-          <a class="button button--primary" href="/contact">Open contact page</a>
-          <a class="button button--secondary" href="/projects">See current focus areas</a>
+          <a class="button button--primary" href="/donate">Open donations page</a>
+          <a class="button button--secondary" href="/contact">Contact</a>
         </div>
       </div>
     </div>

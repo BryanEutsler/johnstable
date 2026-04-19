@@ -1,0 +1,11 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="72" fill="#F5E8D6"/>
+  <rect x="86" y="86" width="1028" height="728" rx="56" fill="#FDF7ED" stroke="#C88E5F" stroke-width="6"/>
+  <circle cx="920" cy="284" r="154" fill="#D1A06F"/>
+  <circle cx="920" cy="284" r="78" fill="#FDF7ED"/>
+  <path d="M158 690C266.667 613.333 372.667 575 476 575C579.333 575 678.333 612.333 773 687V816H158V690Z" fill="#B15D2E"/>
+  <text x="154" y="172" fill="#6B3A1E" font-family="Arial, sans-serif" font-size="28" letter-spacing="5">PLACEHOLDER IMAGE</text>
+  <text x="154" y="336" fill="#17342D" font-family="Georgia, serif" font-size="102">Founding</text>
+  <text x="154" y="430" fill="#17342D" font-family="Georgia, serif" font-size="102">Supporter</text>
+  <text x="154" y="512" fill="#5D685F" font-family="Arial, sans-serif" font-size="34">Use for a donor wall mark, foundation logo, or campaign plate.</text>
+</svg>

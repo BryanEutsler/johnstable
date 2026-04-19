@@ -4,25 +4,82 @@ import PageHero from "../components/PageHero.astro";
 import { contactMethods, siteMeta } from "../data/site";
 ---
 
-<BaseLayout title={`Contact | ${siteMeta.name}`} description="A simple contact page shell for John's Table.">
+<BaseLayout title={`Contact | ${siteMeta.name}`} description="A styled contact page for John's Table.">
   <PageHero
     eyebrow="Contact"
-    title="A simple place to start the conversation."
-    description="This first pass does not invent contact details. It provides a clean layout so real outreach information can be added immediately once confirmed."
+    title="A real contact surface, ready for wiring."
+    description="The form below is intentionally front-end only for now. It creates the full interaction shape so an email service, form handler, or Worker endpoint can be connected in the next pass."
   />
 
   <section class="page-content">
     <div class="section__inner">
-      <div class="contact-list">
-        {
-          contactMethods.map((item) => (
-            <article class="contact-card" data-reveal>
-              <strong>{item.label}</strong>
-              {item.href ? <a href={item.href}>{item.value}</a> : <h2>{item.value}</h2>}
-              {item.note ? <p>{item.note}</p> : null}
-            </article>
-          ))
-        }
+      <div class="contact-layout">
+        <form class="contact-form" data-reveal>
+          <div class="form-intro">
+            <p class="section__eyebrow">Send a message</p>
+            <h2>Start with the essentials and keep the tone direct.</h2>
+            <p>
+              This form is designed and styled now so the team can approve the public experience before
+              choosing where submissions should go.
+            </p>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="full-name">Full name</label>
+              <input id="full-name" name="fullName" type="text" placeholder="Your name" />
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="name@example.com" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" placeholder="Optional" />
+            </div>
+            <div class="field">
+              <label for="reason">I'm reaching out about</label>
+              <select id="reason" name="reason">
+                <option value="">Choose one</option>
+                <option value="general">General questions</option>
+                <option value="volunteer">Volunteering</option>
+                <option value="sponsor">Sponsorship or partnership</option>
+                <option value="donation">Donations or in-kind support</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="7"
+                placeholder="Tell John's Table how you would like to connect."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="button button--primary" type="button">Send message</button>
+            <p class="form-note">
+              Submission handling is not wired yet. This pass establishes the form inputs, hierarchy, and
+              styling only.
+            </p>
+          </div>
+        </form>
+
+        <div class="contact-sidebar">
+          <div class="contact-list">
+            {
+              contactMethods.map((item) => (
+                <article class="contact-card" data-reveal>
+                  <strong>{item.label}</strong>
+                  {item.href ? <a href={item.href}>{item.value}</a> : <h2>{item.value}</h2>}
+                  {item.note ? <p>{item.note}</p> : null}
+                </article>
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
   </section>

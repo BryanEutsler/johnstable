@@ -4,11 +4,14 @@ import { siteMeta } from "../data/site";
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <p>{siteMeta.name} is building a stronger public-facing home for its community work.</p>
-    <nav aria-label="Social media">
+    <div class="site-footer__meta">
+      <p>{siteMeta.name}</p>
+      <span>Meals, essentials, resource connection, and room for community support.</span>
+    </div>
+    <nav class="site-footer__links" aria-label="Footer">
       {
-        siteMeta.socialLinks.map((link) => (
-          <a href={link.href}>{link.label}</a>
+        siteMeta.navItems.map((item) => (
+          <a href={item.href}>{item.label}</a>
         ))
       }
     </nav>

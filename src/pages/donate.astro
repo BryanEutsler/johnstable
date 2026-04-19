@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { donationOptions, siteMeta } from "../data/site";
+---
+
+<BaseLayout title={`Donate | ${siteMeta.name}`} description="Support the work of John's Table.">
+  <PageHero
+    eyebrow="Donate"
+    title="Give the mission a place to land."
+    description="This page creates the structure for future online giving while already explaining how support can strengthen meals, essentials, and resource connection."
+  />
+
+  <section class="page-content">
+    <div class="section__inner">
+      <div class="section__intro" data-reveal>
+        <p class="section__eyebrow">Ways to support</p>
+        <h2>Three giving lanes that match the organization's current public story.</h2>
+        <p>
+          Until a donation processor is connected, this page focuses on clarity: what support is for,
+          what kind of giving language belongs here, and how the structure can expand later.
+        </p>
+      </div>
+
+      <div class="donation-grid">
+        {
+          donationOptions.map((item) => (
+            <article class="donation-card" data-reveal>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+              <span>{item.note}</span>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="section__inner">
+      <div class="cta-panel" data-reveal>
+        <p class="section__eyebrow">What this page can become next</p>
+        <h2>Ready for a giving link, recurring donation flow, or sponsor-backed campaign.</h2>
+        <p>
+          Once the organization chooses a payment platform, the primary call to action here can link
+          directly into that tool without changing the overall page layout.
+        </p>
+        <div class="cta-row">
+          <a class="button button--primary" href="/contact">Talk about giving</a>
+          <a class="button button--secondary" href="/community-partners-and-sponsors">
+            View sponsor page
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
