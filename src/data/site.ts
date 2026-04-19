@@ -15,11 +15,17 @@ export interface ContactMethod {
   note?: string;
 }
 
-export interface SponsorProfile {
+export interface SupportSheet {
   title: string;
   image: string;
   alt: string;
-  note: string;
+  caption: string;
+}
+
+export interface SupportGroup {
+  title: string;
+  intro: string;
+  members: string[];
 }
 
 export interface DonationOption {
@@ -81,24 +87,58 @@ export const contactMethods: ContactMethod[] = [
   }
 ];
 
-export const sponsorProfiles: SponsorProfile[] = [
+export const supportSheets: SupportSheet[] = [
   {
-    title: "Neighborhood partners",
-    image: "/placeholders/sponsor-community.svg",
-    alt: "Illustration representing neighborhood partner organizations working alongside John's Table.",
-    note: "Community groups, churches, and local organizers can help extend the reach of meals, care, and follow-up support."
+    title: "Community partners",
+    image: "/partners/community-partners.png",
+    alt: "Community partners image sheet provided by John's Table.",
+    caption: "Current community partners shown from the source materials provided by John's Table."
   },
   {
-    title: "Local business sponsors",
-    image: "/placeholders/sponsor-market.svg",
-    alt: "Illustration representing local businesses supporting John's Table.",
-    note: "Businesses can underwrite supplies, sponsor gatherings, or support the practical needs that keep direct service moving."
+    title: "Benefactors",
+    image: "/partners/benefactors-a.png",
+    alt: "Benefactors image sheet provided by John's Table.",
+    caption: "Benefactors and supporting organizations shown from the source materials provided by John's Table."
   },
   {
-    title: "Founding supporters",
-    image: "/placeholders/sponsor-foundation.svg",
-    alt: "Illustration representing long-term financial supporters of John's Table.",
-    note: "Individual donors, foundations, and lead supporters can help create the consistency that makes community care sustainable."
+    title: "Additional benefactors",
+    image: "/partners/benefactors-b.png",
+    alt: "Additional benefactors image sheet provided by John's Table.",
+    caption: "Additional benefactors and community supporters shown from the source materials provided by John's Table."
+  }
+];
+
+export const supportGroups: SupportGroup[] = [
+  {
+    title: "Community partners",
+    intro:
+      "These organizations reflect the collaborative network surrounding the work and helping John&apos;s Table stay connected to care, recovery, and neighborhood support.",
+    members: [
+      "Partnership HealthPlan of California",
+      "Solano Recovery Project",
+      "Convergence",
+      "Archway Recovery Services",
+      "Lighthouse Covenant Fellowship",
+      "Drug Safe Solano",
+      "Bray 60V Outreach"
+    ]
+  },
+  {
+    title: "Benefactors",
+    intro:
+      "These benefactors and supporting organizations represent the broader circle of financial, in-kind, and institutional backing visible in the materials you provided.",
+    members: [
+      "St. Mark's Food Pantry",
+      "Kaiser Permanente",
+      "The Matt Garcia Foundation",
+      "Mission Samoa Inc.",
+      "Public Employees Union Local 1",
+      "Panera Bread",
+      "Insulators Local 16",
+      "Virtue Roofing Group",
+      "Right Way Garage Doors",
+      "Compassionate Coordinated Care"
+    ]
   }
 ];
 

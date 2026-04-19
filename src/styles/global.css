@@ -103,8 +103,22 @@ a {
 
 .brand-mark {
   display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brand-mark__copy {
+  display: inline-flex;
   flex-direction: column;
   gap: 0.18rem;
+}
+
+.brand-mark__logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(31, 45, 42, 0.16);
 }
 
 .brand-mark__name {
@@ -195,6 +209,17 @@ a {
   justify-content: center;
   padding: clamp(1.6rem, 4vw, 4.2rem) 0;
   animation: rise 700ms ease both;
+}
+
+.hero-logo-lockup {
+  margin-top: 0.5rem;
+}
+
+.hero-logo {
+  width: min(180px, 36vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 24px rgba(31, 45, 42, 0.18));
 }
 
 .eyebrow,
@@ -606,6 +631,120 @@ a {
   gap: 2rem;
 }
 
+.support-preview {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.support-preview__image,
+.support-preview__content,
+.support-panel,
+.sheet-card {
+  border: 1px solid rgba(31, 45, 42, 0.08);
+  background: rgba(255, 248, 237, 0.78);
+  box-shadow: var(--shadow);
+  border-radius: 30px;
+}
+
+.support-preview__image {
+  overflow: hidden;
+}
+
+.support-preview__content,
+.support-panel {
+  display: grid;
+  gap: 1.15rem;
+  padding: 1.4rem;
+}
+
+.support-group {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.support-group h3,
+.support-panel__intro h2,
+.sheet-card strong {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.support-group p,
+.support-panel__intro p,
+.sheet-card span {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.support-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.support-list li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.2rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.92);
+  border: 1px solid rgba(31, 45, 42, 0.08);
+  font-size: 0.92rem;
+}
+
+.support-list--full {
+  gap: 0.75rem;
+}
+
+.support-list--full li {
+  font-size: 0.95rem;
+}
+
+.support-sheets,
+.support-groups {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.support-sheets {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.support-groups {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sheet-card {
+  overflow: hidden;
+}
+
+.sheet-image {
+  width: 100%;
+  aspect-ratio: 1 / 1.18;
+  object-fit: cover;
+  background: #fff;
+}
+
+.sheet-card figcaption {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1.1rem 1.2rem 1.25rem;
+}
+
+.sponsor-image--sheet {
+  height: 100%;
+  min-height: 100%;
+}
+
 .sponsor-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -891,6 +1030,9 @@ a {
   .home-hero__inner,
   .contact-layout,
   .highlights,
+  .support-preview,
+  .support-sheets,
+  .support-groups,
   .sponsor-grid,
   .donation-grid,
   .story-band {

@@ -7,8 +7,11 @@ const currentPath = Astro.url.pathname;
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand-mark" href="/" aria-label={`${siteMeta.name} home`}>
-      <span class="brand-mark__name">{siteMeta.name}</span>
-      <span class="brand-mark__tag">{siteMeta.tagline}</span>
+      <img class="brand-mark__logo" src="/jt-logo.png" alt={`${siteMeta.name} logo`} />
+      <span class="brand-mark__copy">
+        <span class="brand-mark__name">{siteMeta.name}</span>
+        <span class="brand-mark__tag">{siteMeta.tagline}</span>
+      </span>
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">

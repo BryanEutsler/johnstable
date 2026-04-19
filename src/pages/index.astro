@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { projectHighlights, siteMeta, sponsorProfiles } from "../data/site";
+import { projectHighlights, siteMeta, supportGroups, supportSheets } from "../data/site";
 ---
 
 <BaseLayout
@@ -11,6 +11,9 @@ import { projectHighlights, siteMeta, sponsorProfiles } from "../data/site";
     <div class="home-hero__inner">
       <div class="home-hero__content">
         <p class="eyebrow">{siteMeta.tagline}</p>
+        <div class="hero-logo-lockup">
+          <img class="hero-logo" src="/jt-logo.png" alt={`${siteMeta.name} logo`} />
+        </div>
         <h1>A neighborhood table for meals, dignity, and next steps.</h1>
         <p class="lede">
           {siteMeta.name} exists to make care feel immediate and human: a meal first, then clothing,
@@ -121,30 +124,40 @@ import { projectHighlights, siteMeta, sponsorProfiles } from "../data/site";
     <div class="section__inner sponsor-showcase">
       <div class="section__intro" data-reveal>
         <p class="section__eyebrow">Sponsors and partners</p>
-        <h2>Partnership can take many forms, from local sponsorship to long-term support.</h2>
+        <h2>John&apos;s Table is already surrounded by real community partners and benefactors.</h2>
         <p>
-          For the demo, this section shows the kinds of partnerships John&apos;s Table can invite right now:
-          neighborhood collaboration, business support, and committed financial backing.
+          Instead of abstract sponsor categories, this section now reflects the organizations and
+          benefactors shown in the materials you provided.
         </p>
       </div>
 
-      <div class="sponsor-grid">
-        {
-          sponsorProfiles.map((item) => (
-            <article class="sponsor-card" data-reveal>
-              <img class="sponsor-image" src={item.image} alt={item.alt} loading="lazy" />
-              <div class="sponsor-card__meta">
-                <h3>{item.title}</h3>
-                <p>{item.note}</p>
-              </div>
-            </article>
-          ))
-        }
+      <div class="support-preview" data-reveal>
+        <div class="support-preview__image">
+          <img
+            class="sponsor-image sponsor-image--sheet"
+            src={supportSheets[0].image}
+            alt={supportSheets[0].alt}
+            loading="lazy"
+          />
+        </div>
+        <div class="support-preview__content">
+          {
+            supportGroups.map((group) => (
+              <article class="support-group">
+                <h3>{group.title}</h3>
+                <p>{group.intro}</p>
+                <ul class="support-list" aria-label={group.title}>
+                  {group.members.slice(0, 5).map((member) => <li>{member}</li>)}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
       </div>
 
       <div class="cta-row" data-reveal>
         <a class="button button--primary" href="/community-partners-and-sponsors">
-          Explore sponsor page
+          View full partner list
         </a>
         <a class="button button--secondary" href="/contact">Start a partnership conversation</a>
       </div>

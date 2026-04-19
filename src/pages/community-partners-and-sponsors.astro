@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
-import { siteMeta, sponsorProfiles } from "../data/site";
+import { siteMeta, supportGroups, supportSheets } from "../data/site";
 ---
 
 <BaseLayout
@@ -10,20 +10,39 @@ import { siteMeta, sponsorProfiles } from "../data/site";
 >
   <PageHero
     eyebrow="Community partners and sponsors"
-    title="Support can come from neighbors, businesses, and long-term champions."
-    description="This page shows the kinds of supporters John&apos;s Table can actively invite without inventing specific logos or endorsements."
+    title="The work is strengthened by a visible circle of partners and benefactors."
+    description="This page now reflects the real organizations shown in the materials you shared, organized into a cleaner presentation for client review."
   />
 
   <section class="page-content">
-    <div class="section__inner sponsor-grid sponsor-grid--page">
+    <div class="section__inner support-sheets">
       {
-        sponsorProfiles.map((item) => (
-          <article class="sponsor-card" data-reveal>
-            <img class="sponsor-image" src={item.image} alt={item.alt} loading="lazy" />
-            <div class="sponsor-card__meta">
-              <h3>{item.title}</h3>
-              <p>{item.note}</p>
+        supportSheets.map((item) => (
+          <figure class="sheet-card" data-reveal>
+            <img class="sheet-image" src={item.image} alt={item.alt} loading="lazy" />
+            <figcaption>
+              <strong>{item.title}</strong>
+              <span>{item.caption}</span>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="page-content page-content--tight">
+    <div class="section__inner support-groups">
+      {
+        supportGroups.map((group) => (
+          <article class="support-panel" data-reveal>
+            <div class="support-panel__intro">
+              <p class="section__eyebrow">{group.title}</p>
+              <h2>{group.title}</h2>
+              <p>{group.intro}</p>
             </div>
+            <ul class="support-list support-list--full" aria-label={group.title}>
+              {group.members.map((member) => <li>{member}</li>)}
+            </ul>
           </article>
         ))
       }
@@ -33,31 +52,31 @@ import { siteMeta, sponsorProfiles } from "../data/site";
   <section class="page-content page-content--tight">
     <div class="section__inner shell-grid">
       <article class="shell-card" data-reveal>
-        <h2>Why this page exists</h2>
+        <h2>How this reads in a demo</h2>
         <p>
-          Prospective supporters need a page that explains how they can get involved and what kind of role
-          they can play in helping the organization serve the community.
+          The page now shows real partner and benefactor names, supported by the source image sheets you
+          provided, so the client sees a credible network rather than a concept.
         </p>
       </article>
       <article class="shell-card" data-reveal>
-        <h2>What can be added over time</h2>
+        <h2>What can be refined later</h2>
         <p>
-          Real sponsor names, event partnerships, short impact stories, and approved logos can be layered
-          into this page later without changing its structure.
+          When individual logos, approvals, or short partner stories are available, they can replace the
+          sheet images and turn this page into a more detailed recognition experience.
         </p>
       </article>
       <article class="shell-card" data-reveal>
-        <h2>Partnership lanes</h2>
+        <h2>Partnership invitation</h2>
         <p>
           Meal sponsorships, in-kind support, volunteer collaborations, and neighborhood-led outreach all
           fit naturally within this public-facing framework.
         </p>
       </article>
       <article class="shell-card" data-reveal>
-        <h2>Invitation to respond</h2>
+        <h2>Next conversation</h2>
         <p>
-          The contact page gives potential sponsors and partners a clear next step, which is enough for a
-          demo and easy to extend into a fuller workflow later.
+          The contact page now gives prospective partners and benefactors a clear place to reach out and
+          begin that conversation.
         </p>
       </article>
     </div>
