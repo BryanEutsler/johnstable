@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { projectHighlights, siteMeta } from "../data/site";
+---
+
+<BaseLayout
+  title={`${siteMeta.name} | Community care through meals, clothing, and connection`}
+  description={siteMeta.mission}
+>
+  <section class="home-hero">
+    <div class="home-hero__inner">
+      <div class="home-hero__content">
+        <p class="eyebrow">{siteMeta.tagline}</p>
+        <h1>Community care that starts with a table and grows outward.</h1>
+        <p class="lede">
+          {siteMeta.name} is laying the groundwork for a more visible and welcoming nonprofit presence,
+          centered on meals, practical support, and neighbor-to-neighbor care.
+        </p>
+        <div class="hero-actions">
+          <a class="button button--primary" href="/projects">View Projects</a>
+          <a class="button button--secondary" href="/contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="home-hero__visual" aria-hidden="true">
+        <div class="visual-panel">
+          <p class="visual-panel__quote">“Healing our community one meal at a time.”</p>
+          <div class="visual-panel__details">
+            <div class="visual-chip">
+              <strong>Mission</strong>
+              <span>Food, clothing, and resources for neighbors in need.</span>
+            </div>
+            <div class="visual-chip">
+              <strong>Approach</strong>
+              <span>Grounded, direct, and centered on dignity.</span>
+            </div>
+            <div class="visual-chip">
+              <strong>Focus</strong>
+              <span>Community support with practical follow-through.</span>
+            </div>
+            <div class="visual-chip">
+              <strong>Next step</strong>
+              <span>Build partnerships and widen local visibility.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__inner">
+      <div class="section__intro" data-reveal>
+        <p class="section__eyebrow">Mission and vision</p>
+        <h2>Small acts of care can become a steady community presence.</h2>
+      </div>
+
+      <div class="mission-grid">
+        <article class="stack" data-reveal>
+          <h3>Mission</h3>
+          <p>{siteMeta.mission}</p>
+        </article>
+        <article class="stack" data-reveal>
+          <h3>Vision</h3>
+          <p>{siteMeta.vision}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="section__inner">
+      <div class="section__intro" data-reveal>
+        <p class="section__eyebrow">What the work points toward</p>
+        <h2>Early priorities rooted in real needs, not abstract promises.</h2>
+        <p>
+          The current public content is limited, but the themes are clear: nourish people, provide
+          practical essentials, and help connect them to the next layer of support.
+        </p>
+      </div>
+
+      <div class="highlights">
+        {
+          projectHighlights.map((item, index) => (
+            <article class="highlight" data-reveal>
+              <span class="highlight__index">0{index + 1}</span>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__inner">
+      <div class="cta-panel" data-reveal>
+        <p class="section__eyebrow">Partners and sponsors</p>
+        <h2>Community support grows faster when more hands are at the table.</h2>
+        <p>
+          This first version leaves room for future sponsor names, partner stories, and collaboration
+          details without filling the page with invented proof. The structure is ready for that next step.
+        </p>
+        <div class="cta-row">
+          <a class="button button--primary" href="/community-partners-and-sponsors">
+            Explore partnership page
+          </a>
+          <a class="button button--secondary" href="/about">Read the story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="section__inner">
+      <div class="cta-panel" data-reveal>
+        <p class="section__eyebrow">Get in touch</p>
+        <h2>Use this site foundation to start more direct conversations.</h2>
+        <p>
+          The contact page is intentionally simple for now, with clear placeholders where confirmed
+          outreach details can be added as soon as they are available.
+        </p>
+        <div class="cta-row">
+          <a class="button button--primary" href="/contact">Open contact page</a>
+          <a class="button button--secondary" href="/projects">See current focus areas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

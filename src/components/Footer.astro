@@ -1,0 +1,16 @@
+---
+import { siteMeta } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p>{siteMeta.name} is building a stronger public-facing home for its community work.</p>
+    <nav aria-label="Social media">
+      {
+        siteMeta.socialLinks.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))
+      }
+    </nav>
+  </div>
+</footer>

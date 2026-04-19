@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { projectHighlights, siteMeta } from "../data/site";
+---
+
+<BaseLayout title={`Projects | ${siteMeta.name}`} description="Current program themes and project direction.">
+  <PageHero
+    eyebrow="Projects"
+    title="Program direction rooted in practical support."
+    description="The current public materials point to a few clear areas of service. This page provides a clean shell for turning those themes into fuller program pages later."
+  />
+
+  <section class="page-content">
+    <div class="section__inner highlights">
+      {
+        projectHighlights.map((item, index) => (
+          <article class="highlight" data-reveal>
+            <span class="highlight__index">0{index + 1}</span>
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

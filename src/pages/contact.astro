@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { contactMethods, siteMeta } from "../data/site";
+---
+
+<BaseLayout title={`Contact | ${siteMeta.name}`} description="A simple contact page shell for John's Table.">
+  <PageHero
+    eyebrow="Contact"
+    title="A simple place to start the conversation."
+    description="This first pass does not invent contact details. It provides a clean layout so real outreach information can be added immediately once confirmed."
+  />
+
+  <section class="page-content">
+    <div class="section__inner">
+      <div class="contact-list">
+        {
+          contactMethods.map((item) => (
+            <article class="contact-card" data-reveal>
+              <strong>{item.label}</strong>
+              {item.href ? <a href={item.href}>{item.value}</a> : <h2>{item.value}</h2>}
+              {item.note ? <p>{item.note}</p> : null}
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
