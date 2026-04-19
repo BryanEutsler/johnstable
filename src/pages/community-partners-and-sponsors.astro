@@ -1,84 +1,77 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
-import { siteMeta, supportGroups, supportSheets } from "../data/site";
+import { siteMeta, supporters } from "../data/site";
+
+const communityPartners = supporters.filter((supporter) => supporter.group === "Community Partner");
+const benefactors = supporters.filter((supporter) => supporter.group === "Benefactor");
 ---
 
 <BaseLayout
   title={`Community Partners & Sponsors | ${siteMeta.name}`}
-  description="A page shell for future partners, sponsors, and community collaboration."
+  description="Community partners and benefactors supporting John's Table."
 >
   <PageHero
     eyebrow="Community partners and sponsors"
-    title="The work is strengthened by a visible circle of partners and benefactors."
-    description="This page now reflects the real organizations shown in the materials you shared, organized into a cleaner presentation for client review."
+    title="The work is strengthened by a real circle of partners and benefactors."
+    description="Each organization shown here comes from the materials you shared and is now presented individually rather than as a collage sheet."
   />
 
   <section class="page-content">
-    <div class="section__inner support-sheets">
-      {
-        supportSheets.map((item) => (
-          <figure class="sheet-card" data-reveal>
-            <img class="sheet-image" src={item.image} alt={item.alt} loading="lazy" />
-            <figcaption>
-              <strong>{item.title}</strong>
-              <span>{item.caption}</span>
-            </figcaption>
-          </figure>
-        ))
-      }
+    <div class="section__inner support-section">
+      <div class="section__intro" data-reveal>
+        <p class="section__eyebrow">Community partners</p>
+        <h2>Organizations helping strengthen outreach, recovery support, and local connection.</h2>
+        <p>
+          These partners reflect the collaborative network surrounding John&apos;s Table and the wider
+          community work connected to care, recovery, and direct support.
+        </p>
+      </div>
+
+      <div class="logo-grid">
+        {
+          communityPartners.map((supporter) => (
+            <article class="logo-card" data-reveal>
+              <div class="logo-card__image-wrap">
+                <img class="logo-card__image" src={supporter.image} alt={supporter.alt} loading="lazy" />
+              </div>
+              <div class="logo-card__meta">
+                <span class="logo-card__group">{supporter.group}</span>
+                <h3>{supporter.name}</h3>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 
   <section class="page-content page-content--tight">
-    <div class="section__inner support-groups">
-      {
-        supportGroups.map((group) => (
-          <article class="support-panel" data-reveal>
-            <div class="support-panel__intro">
-              <p class="section__eyebrow">{group.title}</p>
-              <h2>{group.title}</h2>
-              <p>{group.intro}</p>
-            </div>
-            <ul class="support-list support-list--full" aria-label={group.title}>
-              {group.members.map((member) => <li>{member}</li>)}
-            </ul>
-          </article>
-        ))
-      }
-    </div>
-  </section>
+    <div class="section__inner support-section">
+      <div class="section__intro" data-reveal>
+        <p class="section__eyebrow">Benefactors</p>
+        <h2>Businesses, organizations, and supporters helping make the mission possible.</h2>
+        <p>
+          This group reflects the benefactors visible in the materials you shared, presented here as
+          individual organizations instead of grouped source images.
+        </p>
+      </div>
 
-  <section class="page-content page-content--tight">
-    <div class="section__inner shell-grid">
-      <article class="shell-card" data-reveal>
-        <h2>How this reads in a demo</h2>
-        <p>
-          The page now shows real partner and benefactor names, supported by the source image sheets you
-          provided, so the client sees a credible network rather than a concept.
-        </p>
-      </article>
-      <article class="shell-card" data-reveal>
-        <h2>What can be refined later</h2>
-        <p>
-          When individual logos, approvals, or short partner stories are available, they can replace the
-          sheet images and turn this page into a more detailed recognition experience.
-        </p>
-      </article>
-      <article class="shell-card" data-reveal>
-        <h2>Partnership invitation</h2>
-        <p>
-          Meal sponsorships, in-kind support, volunteer collaborations, and neighborhood-led outreach all
-          fit naturally within this public-facing framework.
-        </p>
-      </article>
-      <article class="shell-card" data-reveal>
-        <h2>Next conversation</h2>
-        <p>
-          The contact page now gives prospective partners and benefactors a clear place to reach out and
-          begin that conversation.
-        </p>
-      </article>
+      <div class="logo-grid">
+        {
+          benefactors.map((supporter) => (
+            <article class="logo-card" data-reveal>
+              <div class="logo-card__image-wrap">
+                <img class="logo-card__image" src={supporter.image} alt={supporter.alt} loading="lazy" />
+              </div>
+              <div class="logo-card__meta">
+                <span class="logo-card__group">{supporter.group}</span>
+                <h3>{supporter.name}</h3>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>

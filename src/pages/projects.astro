@@ -8,20 +8,31 @@ import { projectHighlights, siteMeta } from "../data/site";
   <PageHero
     eyebrow="Projects"
     title="Program direction rooted in practical support."
-    description="The current public materials point to a few clear areas of service. This page provides a clean shell for turning those themes into fuller program pages later."
+    description="The public story points to three visible areas of service: shared meals, clothing and essentials, and resource connection that helps care continue."
   />
 
   <section class="page-content">
-    <div class="section__inner highlights">
-      {
-        projectHighlights.map((item, index) => (
-          <article class="highlight" data-reveal>
-            <span class="highlight__index">0{index + 1}</span>
-            <h3>{item.title}</h3>
-            <p>{item.summary}</p>
-          </article>
-        ))
-      }
+    <div class="section__inner">
+      <div class="section__intro" data-reveal>
+        <p class="section__eyebrow">Current focus</p>
+        <h2>Support that stays close to everyday needs.</h2>
+        <p>
+          These focus areas come directly from the mission and provide a clear picture of how John&apos;s
+          Table serves the community in concrete, understandable ways.
+        </p>
+      </div>
+
+      <div class="highlights">
+        {
+          projectHighlights.map((item, index) => (
+            <article class="highlight" data-reveal>
+              <span class="highlight__index">0{index + 1}</span>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>

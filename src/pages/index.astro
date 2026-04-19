@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { projectHighlights, siteMeta, supportGroups, supportSheets } from "../data/site";
+import { projectHighlights, siteMeta, supporters } from "../data/site";
+
+const featuredSupporters = supporters.slice(0, 8);
 ---
 
 <BaseLayout
@@ -30,9 +32,6 @@ import { projectHighlights, siteMeta, supportGroups, supportSheets } from "../da
           <a class="button button--secondary" href="/projects">View Projects</a>
           <a class="button button--secondary" href="/contact">Contact</a>
         </div>
-        <p class="hero-note">
-          This version gives John&apos;s Table a clearer public-facing story and stronger calls to action.
-        </p>
       </div>
 
       <div class="home-hero__visual" aria-hidden="true">
@@ -45,17 +44,17 @@ import { projectHighlights, siteMeta, supportGroups, supportSheets } from "../da
               <span>Food and essentials offered with dignity, not distance.</span>
             </div>
             <div class="visual-chip">
-              <strong>Built for partnership</strong>
-              <span>Ready for local sponsors, volunteers, and community allies.</span>
+              <strong>Community rooted</strong>
+              <span>Built around practical help, neighbor-to-neighbor support, and visible care.</span>
             </div>
             <div class="visual-chip">
-              <strong>Made to grow</strong>
-              <span>A stronger public site now, deeper stories and giving tools next.</span>
+              <strong>Backed by partners</strong>
+              <span>Strengthened by local organizations, benefactors, and community collaboration.</span>
             </div>
           </div>
         </div>
         <div class="visual-tag visual-tag--top">501(c)(3)</div>
-        <div class="visual-tag visual-tag--bottom">Community care, visibly organized</div>
+        <div class="visual-tag visual-tag--bottom">Serving the community one meal at a time</div>
       </div>
     </div>
   </section>
@@ -66,7 +65,7 @@ import { projectHighlights, siteMeta, supportGroups, supportSheets } from "../da
         <span>Meals that gather people</span>
         <span>Clothing that restores comfort</span>
         <span>Resources that help people move forward</span>
-        <span>Sponsors that help the work last</span>
+        <span>Partners that help the work last</span>
       </div>
     </div>
   </section>
@@ -77,8 +76,8 @@ import { projectHighlights, siteMeta, supportGroups, supportSheets } from "../da
         <p class="section__eyebrow">Mission and vision</p>
         <h2>Care that starts with the immediate need and keeps reaching outward.</h2>
         <p>
-          The organization&apos;s current public message is simple and direct. This homepage gives that
-          message stronger structure, warmer language, and a clearer path for supporters to respond.
+          The organization&apos;s public message is simple and direct. This homepage gives that message
+          stronger structure, warmer language, and a clearer path for supporters to respond.
         </p>
       </div>
 
@@ -98,11 +97,11 @@ import { projectHighlights, siteMeta, supportGroups, supportSheets } from "../da
   <section class="section section--surface">
     <div class="section__inner">
       <div class="section__intro" data-reveal>
-        <p class="section__eyebrow">What the work points toward</p>
-        <h2>Three practical lanes the organization can speak about with confidence now.</h2>
+        <p class="section__eyebrow">Areas of support</p>
+        <h2>Three ways the work shows up in everyday community life.</h2>
         <p>
-          Rather than padding the site with vague nonprofit language, the homepage keeps attention on the
-          direct kinds of help already named in the existing public material.
+          The strongest public story here is practical: meals, essentials, and the kind of follow-through
+          that helps people move toward greater stability.
         </p>
       </div>
 
@@ -123,41 +122,33 @@ import { projectHighlights, siteMeta, supportGroups, supportSheets } from "../da
   <section class="section">
     <div class="section__inner sponsor-showcase">
       <div class="section__intro" data-reveal>
-        <p class="section__eyebrow">Sponsors and partners</p>
-        <h2>John&apos;s Table is already surrounded by real community partners and benefactors.</h2>
+        <p class="section__eyebrow">Partners and benefactors</p>
+        <h2>John&apos;s Table is already supported by a visible network of community organizations and benefactors.</h2>
         <p>
-          Instead of abstract sponsor categories, this section now reflects the organizations and
-          benefactors shown in the materials you provided.
+          These are some of the organizations shown in the materials you provided, presented individually
+          so the site reflects the real circle of support around the work.
         </p>
       </div>
 
-      <div class="support-preview" data-reveal>
-        <div class="support-preview__image">
-          <img
-            class="sponsor-image sponsor-image--sheet"
-            src={supportSheets[0].image}
-            alt={supportSheets[0].alt}
-            loading="lazy"
-          />
-        </div>
-        <div class="support-preview__content">
-          {
-            supportGroups.map((group) => (
-              <article class="support-group">
-                <h3>{group.title}</h3>
-                <p>{group.intro}</p>
-                <ul class="support-list" aria-label={group.title}>
-                  {group.members.slice(0, 5).map((member) => <li>{member}</li>)}
-                </ul>
-              </article>
-            ))
-          }
-        </div>
+      <div class="logo-grid logo-grid--homepage">
+        {
+          featuredSupporters.map((supporter) => (
+            <article class="logo-card" data-reveal>
+              <div class="logo-card__image-wrap">
+                <img class="logo-card__image" src={supporter.image} alt={supporter.alt} loading="lazy" />
+              </div>
+              <div class="logo-card__meta">
+                <span class="logo-card__group">{supporter.group}</span>
+                <h3>{supporter.name}</h3>
+              </div>
+            </article>
+          ))
+        }
       </div>
 
       <div class="cta-row" data-reveal>
         <a class="button button--primary" href="/community-partners-and-sponsors">
-          View full partner list
+          View all partners and benefactors
         </a>
         <a class="button button--secondary" href="/contact">Start a partnership conversation</a>
       </div>
@@ -168,10 +159,10 @@ import { projectHighlights, siteMeta, supportGroups, supportSheets } from "../da
     <div class="section__inner">
       <div class="cta-panel cta-panel--ink" data-reveal>
         <p class="section__eyebrow">Give support a visible place</p>
-        <h2>The donation page now explains how support can strengthen the work, even before online giving is connected.</h2>
+        <h2>The donation page explains how support can strengthen meals, essentials, and ongoing care.</h2>
         <p>
-          That gives the client a realistic preview of how giving can be framed on the site without
-          committing to a processor or donation workflow yet.
+          It gives donors and supporters a clear understanding of where help can go while keeping the
+          public story aligned with the mission.
         </p>
         <div class="cta-row">
           <a class="button button--primary" href="/donate">Open donations page</a>
