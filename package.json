@@ -7,9 +7,13 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "astro": "^5.8.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.83.0"
   }
 }
