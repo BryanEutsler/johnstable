@@ -6,6 +6,7 @@ export interface NavItem {
 export interface ProjectHighlight {
   title: string;
   summary: string;
+  description: string;
 }
 
 export interface ContactMethod {
@@ -49,17 +50,23 @@ export const projectHighlights: ProjectHighlight[] = [
   {
     title: "Meals and food access",
     summary:
-      "Shared meals remain a visible expression of welcome, care, and practical support in the community."
+      "Shared meals remain a visible expression of welcome, care, and practical support in the community.",
+    description:
+      "A meal does more than fill a plate — it communicates that a person is seen, valued, and welcome. John's Table gathers neighbors around food as an act of hospitality, not charity. Whether it's a hot meal served together or groceries to take home, this work starts from the belief that being fed is a basic form of dignity. Community partners including St. Mark's Food Pantry and Panera Bread help make consistent, community-centered food support possible week after week."
   },
   {
     title: "Clothing and essentials",
     summary:
-      "John's Table helps meet immediate needs with clothing, basic items, and direct material support."
+      "John's Table helps meet immediate needs with clothing, basic items, and direct material support.",
+    description:
+      "A jacket when it's cold. A change of clothes after a hard stretch. These aren't small things to someone moving through a difficult season. John's Table works to meet immediate material needs with care and without judgment — offering clothing and essential items to neighbors who need them. The goal is always dignity: making sure people leave not just with something they need, but with the feeling that they were treated as fully human."
   },
   {
     title: "Resource connection",
     summary:
-      "The work also includes helping neighbors connect with community resources, recovery support, and next-step guidance."
+      "The work also includes helping neighbors connect with community resources, recovery support, and next-step guidance.",
+    description:
+      "Food and clothing open a door. What happens next matters just as much. John's Table works alongside partners like the Solano Recovery Project, Archway Recovery Services, and Drug Safe Solano to help neighbors navigate what comes next — whether that means connecting to housing resources, healthcare through Partnership HealthPlan, recovery programs, or other community services. This relational work is where urgent help becomes lasting care, and where neighbors begin moving toward more self-sustaining futures."
   }
 ];
 

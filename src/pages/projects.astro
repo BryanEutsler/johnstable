@@ -4,34 +4,74 @@ import PageHero from "../components/PageHero.astro";
 import { projectHighlights, siteMeta } from "../data/site";
 ---
 
-<BaseLayout title={`Projects | ${siteMeta.name}`} description="Current program themes and project direction.">
+<BaseLayout title={`Projects | ${siteMeta.name}`} description="How John's Table serves the community through meals, clothing, and resource connection.">
   <PageHero
     eyebrow="Projects"
-    title="Program direction rooted in practical support."
-    description="The public story points to three visible areas of service: shared meals, clothing and essentials, and resource connection that helps care continue."
+    title="Three areas of service rooted in practical care."
+    description="Everything John's Table does flows from a simple starting point: meet the immediate need, then keep caring. Here's what that looks like in practice."
   />
 
   <section class="page-content">
     <div class="section__inner">
+      {
+        projectHighlights.map((item, index) => (
+          <article class="project-block" data-reveal>
+            <div class="project-block__header">
+              <span class="highlight__index">0{index + 1}</span>
+              <h2>{item.title}</h2>
+              <p class="project-block__summary">{item.summary}</p>
+            </div>
+            <div class="project-block__body">
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="section__inner">
       <div class="section__intro" data-reveal>
-        <p class="section__eyebrow">Current focus</p>
-        <h2>Support that stays close to everyday needs.</h2>
+        <p class="section__eyebrow">Get involved</p>
+        <h2>The work is better when more neighbors are part of it.</h2>
         <p>
-          These focus areas come directly from the mission and provide a clear picture of how John&apos;s
-          Table serves the community in concrete, understandable ways.
+          John's Table relies on volunteers, in-kind donations, and community partnerships to
+          keep the work going. Whether you have time, resources, or both — there's a meaningful
+          way for you to participate.
         </p>
       </div>
 
       <div class="highlights">
-        {
-          projectHighlights.map((item, index) => (
-            <article class="highlight" data-reveal>
-              <span class="highlight__index">0{index + 1}</span>
-              <h3>{item.title}</h3>
-              <p>{item.summary}</p>
-            </article>
-          ))
-        }
+        <article class="highlight" data-reveal>
+          <span class="highlight__index">01</span>
+          <h3>Volunteer your time</h3>
+          <p>
+            Help with meal service, clothing distribution, or outreach. Volunteers are the
+            backbone of everything John's Table does.
+          </p>
+        </article>
+        <article class="highlight" data-reveal>
+          <span class="highlight__index">02</span>
+          <h3>Donate in-kind goods</h3>
+          <p>
+            Food items, clothing, and household essentials are always needed. In-kind support
+            can be arranged directly through the contact page.
+          </p>
+        </article>
+        <article class="highlight" data-reveal>
+          <span class="highlight__index">03</span>
+          <h3>Give financially</h3>
+          <p>
+            Monetary gifts help cover the costs of meals, supplies, and coordination — giving
+            the organization the flexibility to respond to what neighbors need most.
+          </p>
+        </article>
+      </div>
+
+      <div class="cta-row" data-reveal>
+        <a class="button button--primary" href="/contact">Talk to us about volunteering</a>
+        <a class="button button--secondary" href="/donate">Make a donation</a>
       </div>
     </div>
   </section>

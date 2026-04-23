@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import { contactMethods, siteMeta } from "../data/site";
 ---
 
-<BaseLayout title={`Contact | ${siteMeta.name}`} description="A styled contact page for John's Table.">
+<BaseLayout title={`Contact | ${siteMeta.name}`} description="Get in touch with John's Table about volunteering, partnerships, donations, or community support.">
   <PageHero
     eyebrow="Contact"
     title="A clear place to start the conversation."
@@ -19,8 +19,8 @@ import { contactMethods, siteMeta } from "../data/site";
             <p class="section__eyebrow">Send a message</p>
             <h2>Tell John&apos;s Table how you would like to connect.</h2>
             <p>
-              Whether the message is about volunteering, sponsorship, or general outreach, this form gives
-              the site a clear public contact surface.
+              Whether you want to volunteer, explore a partnership, ask about in-kind support, or
+              just learn more — this is the right place to start.
             </p>
           </div>
 
@@ -59,9 +59,9 @@ import { contactMethods, siteMeta } from "../data/site";
           </div>
 
           <div class="form-actions">
-            <button class="button button--primary" type="button">Send message</button>
+            <button class="button button--primary" type="submit">Send message</button>
             <p class="form-note">
-              Form delivery routing can be finalized as part of launch preparation.
+              We'll be in touch within a few business days.
             </p>
           </div>
         </form>

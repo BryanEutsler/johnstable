@@ -1,12 +1,17 @@
 ---
 import { siteMeta } from "../data/site";
+
+const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__meta">
       <p>{siteMeta.name}</p>
-      <span>Meals, essentials, resource connection, and room for community support.</span>
+      <span>Meals, clothing, and resource connection for neighbors in need.</span>
+      <span class="site-footer__legal">
+        501(c)(3) public charity &middot; Solano County, CA &middot; &copy; {year} {siteMeta.name}
+      </span>
     </div>
     <nav class="site-footer__links" aria-label="Footer">
       {

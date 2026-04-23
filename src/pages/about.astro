@@ -4,11 +4,11 @@ import PageHero from "../components/PageHero.astro";
 import { siteMeta } from "../data/site";
 ---
 
-<BaseLayout title={`About | ${siteMeta.name}`} description="About John's Table and its community mission.">
+<BaseLayout title={`About | ${siteMeta.name}`} description="Learn about John's Table — a community-centered nonprofit providing meals, clothing, and resource connection in Solano County, CA.">
   <PageHero
     eyebrow="About"
     title="A community-centered mission built around practical care."
-    description="John's Table presents a simple public message: serve the community with meals, clothing, and resources while helping people move toward more self-sustaining futures."
+    description="John's Table exists to serve neighbors with meals, clothing, and the kind of follow-through that helps people move toward more stable, self-sustaining futures."
   />
 
   <section class="page-content">
@@ -24,17 +24,80 @@ import { siteMeta } from "../data/site";
       <article class="shell-card" data-reveal>
         <h2>Community approach</h2>
         <p>
-          The work begins with direct needs such as food, clothing, and practical support, then expands
-          into the relationships and connections that help care continue beyond the first interaction.
+          Care at John's Table begins with what's immediate: food, clothing, and essentials. From
+          there, it grows into relationship — connecting neighbors with recovery support, community
+          services, and the people who can help them move toward stability. The table is where it
+          starts; the ongoing work is where care continues.
         </p>
       </article>
       <article class="shell-card" data-reveal>
         <h2>Why it matters</h2>
         <p>
-          A strong public presence helps neighbors understand the mission, helps supporters see where
-          their help can matter, and gives partners a clearer way to connect with the organization.
+          In communities where neighbors face food insecurity, the long road of recovery, or the
+          weight of material need, a place to gather, receive help, and feel seen can change the
+          direction of a day. John's Table exists to be that place — not a program at a distance,
+          but a table where people are welcomed and where practical care meets lasting relationship.
         </p>
       </article>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="section__inner">
+      <div class="section__intro" data-reveal>
+        <p class="section__eyebrow">Who we serve</p>
+        <h2>Neighbors facing real needs in our community.</h2>
+        <p>
+          John's Table serves anyone in the community who is hungry, in need of clothing, or looking
+          for a connection to resources that can help them move forward. There are no barriers to
+          entry — only a table set for whoever shows up.
+        </p>
+      </div>
+
+      <div class="highlights">
+        <article class="highlight" data-reveal>
+          <span class="highlight__index">01</span>
+          <h3>People experiencing food insecurity</h3>
+          <p>
+            Neighbors who don't know where their next meal is coming from are welcomed with food,
+            warmth, and the dignity of a shared table.
+          </p>
+        </article>
+        <article class="highlight" data-reveal>
+          <span class="highlight__index">02</span>
+          <h3>Individuals in recovery and transition</h3>
+          <p>
+            Alongside partners like the Solano Recovery Project and Archway Recovery Services,
+            John's Table provides a stable, supportive presence for people navigating recovery
+            and life transitions.
+          </p>
+        </article>
+        <article class="highlight" data-reveal>
+          <span class="highlight__index">03</span>
+          <h3>Community members in immediate need</h3>
+          <p>
+            Whether it's clothing, household essentials, or a connection to the right resource,
+            John's Table meets neighbors where they are with practical help and no judgment.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__inner">
+      <div class="cta-panel" data-reveal>
+        <p class="section__eyebrow">Get involved</p>
+        <h2>There's a place at the table for you, too.</h2>
+        <p>
+          Whether you want to volunteer, make a donation, or explore a community partnership,
+          John's Table welcomes neighbors who want to be part of the work.
+        </p>
+        <div class="cta-row">
+          <a class="button button--primary" href="/donate">Support the mission</a>
+          <a class="button button--secondary" href="/contact">Reach out</a>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

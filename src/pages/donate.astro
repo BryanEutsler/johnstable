@@ -4,21 +4,22 @@ import PageHero from "../components/PageHero.astro";
 import { donationOptions, siteMeta } from "../data/site";
 ---
 
-<BaseLayout title={`Donate | ${siteMeta.name}`} description="Support the work of John's Table.">
+<BaseLayout title={`Donate | ${siteMeta.name}`} description="Support the work of John's Table with a financial gift or in-kind donation.">
   <PageHero
     eyebrow="Donate"
     title="Give the mission a place to land."
-    description="This page explains how support can strengthen meals, essentials, and resource connection across the work of John's Table."
+    description="Your support helps keep the table open — ensuring neighbors have access to meals, clothing, and the resources that help care continue."
   />
 
   <section class="page-content">
     <div class="section__inner">
       <div class="section__intro" data-reveal>
         <p class="section__eyebrow">Ways to support</p>
-        <h2>Three giving lanes that match the organization's current public story.</h2>
+        <h2>Three giving lanes that match the heart of the work.</h2>
         <p>
-          The goal of this page is clarity. It helps a prospective donor understand where support can go
-          and why giving matters, even before online payments are turned on.
+          Whether you give once or regularly, your contribution goes directly toward the neighbors
+          John's Table serves. Each lane below reflects a real area of the mission — choose the one
+          that resonates most, or reach out to give across all three.
         </p>
       </div>
 
@@ -38,17 +39,59 @@ import { donationOptions, siteMeta } from "../data/site";
 
   <section class="section section--surface">
     <div class="section__inner">
-      <div class="cta-panel" data-reveal>
-        <p class="section__eyebrow">Giving conversation</p>
-        <h2>Supporters can already understand how their help connects to the mission.</h2>
+      <div class="section__intro" data-reveal>
+        <p class="section__eyebrow">In-kind giving</p>
+        <h2>Not all support comes as a check.</h2>
         <p>
-          The page is structured so a direct giving link can be added cleanly, while the public story
-          remains focused on meals, essentials, and community care.
+          John's Table welcomes in-kind donations of food, clothing, and household essentials.
+          If you or your organization would like to donate goods directly, reach out through the
+          contact page and we'll coordinate the details with you.
+        </p>
+      </div>
+
+      <div class="highlights">
+        <article class="highlight" data-reveal>
+          <span class="highlight__index">01</span>
+          <h3>Food and groceries</h3>
+          <p>
+            Non-perishable food items, fresh produce, and packaged goods help extend the reach
+            of every meal service.
+          </p>
+        </article>
+        <article class="highlight" data-reveal>
+          <span class="highlight__index">02</span>
+          <h3>Clothing and essentials</h3>
+          <p>
+            Clean, gently used or new clothing for adults — especially coats, shoes, and
+            seasonal items — makes a real difference for neighbors in need.
+          </p>
+        </article>
+        <article class="highlight" data-reveal>
+          <span class="highlight__index">03</span>
+          <h3>Household and personal care items</h3>
+          <p>
+            Toiletries, hygiene products, and basic household goods round out the essentials
+            support and help people feel restored.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink">
+    <div class="section__inner">
+      <div class="cta-panel cta-panel--ink" data-reveal>
+        <p class="section__eyebrow">Ready to give?</p>
+        <h2>Every contribution — large or small — helps keep care close to neighbors who need it.</h2>
+        <p>
+          To make a financial gift or arrange an in-kind donation, reach out through the contact
+          page. We'll connect you with the right giving path and make sure your support lands
+          where it can matter most.
         </p>
         <div class="cta-row">
-          <a class="button button--primary" href="/contact">Talk about giving</a>
+          <a class="button button--primary" href="/contact">Start a giving conversation</a>
           <a class="button button--secondary" href="/community-partners-and-sponsors">
-            View sponsor page
+            Become a partner
           </a>
         </div>
       </div>
